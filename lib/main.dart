@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twitch_clone/screens/login_screen.dart';
@@ -5,8 +6,13 @@ import 'package:twitch_clone/screens/onboarding_screen.dart';
 import 'package:twitch_clone/screens/signup_screen.dart';
 import 'package:twitch_clone/utils/colors.dart';
 
+import 'firebase_options.dart';
 
-void main() {
+
+void main() async{
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
