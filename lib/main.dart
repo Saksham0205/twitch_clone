@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twitch_clone/screens/home_screen.dart';
 import 'package:twitch_clone/screens/login_screen.dart';
 import 'package:twitch_clone/screens/onboarding_screen.dart';
 import 'package:twitch_clone/screens/signup_screen.dart';
@@ -10,6 +11,7 @@ import 'firebase_options.dart';
 
 
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -48,6 +50,7 @@ class MyApp extends StatelessWidget {
         '/onboarding':(context)=>const OnboardingScreen(),
         '/login':(context)=>const LoginScreen(),
         '/signup':(context)=>const SignupScreen(),
+        '/home':(context)=>const HomeScreen(),
 
       },
       home: const OnboardingScreen(),

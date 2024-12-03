@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "902685381098",
-    "project_id": "twitch-78b5f",
-    "storage_bucket": "twitch-78b5f.firebasestorage.app"
+    "project_number": "977217360826",
+    "project_id": "twitch-e4e63",
+    "storage_bucket": "twitch-e4e63.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:902685381098:android:78dba47d2ad02e05302293",
+        "mobilesdk_app_id": "1:977217360826:android:efb6fd234ad6ed08144383",
         "android_client_info": {
           "package_name": "com.twitch.app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBt0ia6eBmTU1lGSyaXhKLqDob0ow6ZWKE"
+          "current_key": "AIzaSyDVtQzW-pDp5Rg-8fIUumkRu465PjlgzH4"
         }
       ],
       "services": {

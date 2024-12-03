@@ -15,7 +15,7 @@ class OnboardingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Welcome to \nAjnabee",
+              "Welcome to \Twitch",
               style: TextStyle(fontSize: 40.sp, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),

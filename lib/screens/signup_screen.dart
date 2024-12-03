@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twitch_clone/services/auth_methods.dart';
 import 'package:twitch_clone/widgets/custom_button.dart';
 import 'package:twitch_clone/widgets/custom_textfield.dart';
+
+import '../utils/showsnackbar.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -14,6 +17,27 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
+  final AuthMethods _authMethods = AuthMethods();
+  void signupWithEmail() async {
+    if (_emailController.text.isEmpty ||
+        _usernameController.text.isEmpty ||
+        _passwordController.text.isEmpty) {
+      showSnackbar(context, "Please fill all fields");
+      return;
+    }
+
+    bool res = await _authMethods.signupWithEmail(
+      context,
+      _emailController.text.trim(),
+      _usernameController.text.trim(),
+      _passwordController.text.trim(),
+    );
+
+    if (res) {
+      Navigator.pushNamed(context, "/home");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +54,7 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(
                 height: 40.h,
               ),
-              Text(
+              const Text(
                 "Email",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -41,7 +65,7 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(
                 height: 20.h,
               ),
-              Text(
+              const Text(
                 "Password",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -52,7 +76,7 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(
                 height: 20.h,
               ),
-              Text(
+              const Text(
                 "Username",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -65,7 +89,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
               SizedBox(
                   width: double.infinity,
-                  child: CustomButton(text: "Sign Up", onTap: () {}))
+                  child: CustomButton(text: "Sign Up", onTap: signupWithEmail))
             ],
           ),
         ),
