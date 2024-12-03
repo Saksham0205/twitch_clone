@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twitch_clone/screens/login_screen.dart';
 import 'package:twitch_clone/screens/onboarding_screen.dart';
+import 'package:twitch_clone/screens/signup_screen.dart';
 import 'package:twitch_clone/utils/colors.dart';
 
 
@@ -38,6 +40,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/onboarding':(context)=>const OnboardingScreen(),
+        '/login':(context)=>const LoginScreen(),
+        '/signup':(context)=>const SignupScreen(),
+
       },
       home: const OnboardingScreen(),
     );

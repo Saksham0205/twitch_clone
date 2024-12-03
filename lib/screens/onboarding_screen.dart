@@ -26,11 +26,15 @@ class OnboardingScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 8.h),
               child: SizedBox(
                   width: double.infinity,
-                  child: CustomButton(text: "Log in", onTap: () {})),
+                  child: CustomButton(text: "Log in", onTap: () {
+                    Navigator.pushNamed(context, "/login");
+                  })),
             ),
             SizedBox(
                 width: double.infinity,
-                child: CustomButton(text: "Sign Up", onTap: () {})),
+                child: CustomButton(text: "Sign Up", onTap: () {
+                  Navigator.pushNamed(context, "/signup");
+                })),
           ],
         ),
       ),
